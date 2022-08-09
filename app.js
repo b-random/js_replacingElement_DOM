@@ -1,38 +1,24 @@
-//Event Listeners
+//Mouse Events
 
-// document.querySelector('.clear-tasks').addEventListener('click', function(objPara){
-//   console.log('hello!');
-//   objPara.preventDefault(); 
-// });
-//<a class="clear-tasks btn black" href="">Clear Tasks</a>
-//the href in the index needs a hashmark to hold the event, otherwise it just flashes
+const clearBtn = document.querySelector('.clear-tasks');
+const card = document.querySelector('.card');
+const heading = document.querySelector('h5');
 
-document.querySelector('.clear-tasks').addEventListener('click', onClick);
+//click and mouse events
+// clearBtn.addEventListener('click', runEvent);
+// clearBtn.addEventListener('dblclick', runEvent);
+//clearBtn.addEventListener('mouseup', runEvent); 
+//heading.addEventListener('mouseenter', runEvent);
+//card.addEventListener('mouseenter', runEvent);
 
-function onClick(e){
-//... console.log('clicked it');
-//... e.preventDefault(); //bcuz this href is set to google
+//mousemove... good for gaming/interactive applications
+card.addEventListener('mousemove', runEvent);
 
-//event targeting
-  let val;
-  val = e.target; //returns actual element <a...>
-  val = e.target.className;
-  val = e.target.classList.add('new-class');
-  val = e.target.className; //now with added class
-  val = e.target.classList;
-  val = e.target.innerText = 'pooshed!'; //changes button text after click
+//track mouse movement within an element
+//event handler
+function runEvent(e){
+  console.log(`Event Type: ${e.type}`);
+  heading.textContent = `MouseX: ${e.offsetX} MouseY ${e.offsetY}`;
 
-  //event type
-  val = e.type;  //click
-
-  //timestamp
-  val = e.timeStamp;
-
-  //event coordinates; the exact spot where the selected element is clicked relative to window
-  val = e.clientX;
-  val = e.clientY;
-  //event coordinates; the exact spot where the selected element is clicked relative to window
-  val = e.offsetY;
-  
-  console.log(val);
-};
+  document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 255)`;
+}
