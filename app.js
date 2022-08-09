@@ -1,48 +1,48 @@
-// // REPLACE ELEMENT
-// //replacing an h5 element with an h2 element:
+// REPLACE ELEMENT
+//replacing an h5 element with an h2 element:
 
 
-// //create element
-// const newHeading = document.createElement('h2');
+//create element
+const newHeading = document.createElement('h2');
 
-// //add/replace ID
-// newHeading.id = 'task-title';
+//add/replace ID
+newHeading.id = 'task-title';
 
-// //add/replace text node
-// newHeading.appendChild(document.createTextNode('Task List'));
-// //The appendChild() method appends a node (element) as the last child of an element.
+//add/replace text node
+newHeading.appendChild(document.createTextNode('Task List'));
+//The appendChild() method appends a node (element) as the last child of an element.
 
-// //get the old heading
-// const oldHeading = document.getElementById('task-title');
+//get the old heading
+const oldHeading = document.getElementById('task-title');
 
-// //find parent to replace the child... using class in this case
-// const findParent = document.querySelector('.card-action');
-// //this is the div that the h5 will be removed from and the h2 will be replaced into
+//find parent to replace the child... using class in this case
+const findParent = document.querySelector('.card-action');
+//this is the div that the h5 will be removed from and the h2 will be replaced into
 
-// //replace
-// findParent.replaceChild(newHeading, oldHeading);
-// //first arguement is what is new element, second arguement is what is being replaced
-
-
+//replace
+findParent.replaceChild(newHeading, oldHeading);
+//first arguement is what is new element, second arguement is what is being replaced
 
 
 
-// //now to remove an 'li' element
-// const lis = document.getElementsByTagName('li');
 
-// //lis[2].remove();
-// lis[2].style.color = 'red';
 
-// //or remove a child element
-// // ......const list = document.querySelector('ul').children;
-// // ..... list[2].remove();
+//now to remove an 'li' element
+const lis = document.getElementsByTagName('li');
 
-// //or
+//lis[2].remove();
+lis[2].style.color = 'red';
 
-// const listOther = document.querySelector('ul');
-// listOther.removeChild(lis[2]);
+//or remove a child element
+// ......const list = document.querySelector('ul').children;
+// ..... list[2].remove();
 
-// // move classes and attributes
+//or
+
+const listOther = document.querySelector('ul');
+listOther.removeChild(lis[2]);
+
+// move classes and attributes
 //classes..
 const firstLi = document.querySelector('li');
 const liKid = firstLi.children[0];
